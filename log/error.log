@@ -1,0 +1,5 @@
+[28/Nov/2012:00:00:00][1310.3066895216][-sched-] Notice: util::roll_server_log: Done rolling the server log.
+[28/Nov/2012:00:09:09][1310.3048389488][-default:2-] Warning: / has no doc(title) set.
+[28/Nov/2012:00:09:09][1310.3056794480][-default:4-] Error: return: failed to redirect 'GET /global/file-not-found.html': exceeded recursion limit of 3
+[28/Nov/2012:00:09:12][1310.3035949936][-default:0-] Warning: /cmit/admin/ has no doc(title) set.
+[28/Nov/2012:00:09:13][1310.3031747440][-default:1-] Error: return: failed to redirect 'GET /global/file-not-found.html': exceeded recursion limit of 3
