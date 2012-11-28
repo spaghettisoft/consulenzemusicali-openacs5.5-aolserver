@@ -25,8 +25,13 @@ ad_proc -public cmit::song::get {
 	  from cmit_songs s
 	where song_id = :song_id
     " -column_array row
+    
     # Get datas from the file linked to this song
-    util::fs::get_file -revision_id $song_id -array file
+    set item_id [db_string query "
+      select item_id from cr_revisions
+    where revision_id = :song_id"]
+    
+    util::fs::get_file -item_id $item_id -array file
     set row(title)     $file(title)
     set row(author)    $file(description)
     set row(filename)  $file(name)
@@ -455,7 +460,7 @@ ad_proc -public cmit::playlist::edit_song {
 	  update cmit_playlist_songs set
 	       order_no = order_no + 1
 	    where playlist_id = :playlist_id
-	      and order_no > :order_no;
+	      and order_no >= :order_no;
 	  
 	  update cmit_playlist_songs set
 	       order_no = order_no - 1
